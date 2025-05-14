@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Thanh menu cố định */
+  .ungdung {
+    background-image: linear-gradient(0, #006666, #006666);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-container {
+    width: 100%;
+    max-width: 1400px; /* mở rộng nếu muốn menu sát phải hơn */
+    padding: 0 40px;     /* đẩy menu sát phải hơn nữa */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo nằm bên trái */
+  .logo img {
+    height: 65px;         /* to hơn một chút */
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  .list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(14px, 2.2vw, 22px); /* tăng size nhẹ */
+    font-weight: 550; /* chữ đậm hơn */
+  }
+  
+  .lienket {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.3s ease;
+  }
+  
+  .lienket:hover {
+    opacity: 80%;
+  }
+  
+  /* Ẩn nút hamburger trên desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+}
+
+/* Menu list mặc định */
+.nav-container .list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Responsive mobile */
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .nav-container .list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px; /* 👈 Đẩy xuống hơn, tăng từ 60px lên 80px */
+    right: 20px;
+    background-color: #006666;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-container .list.show {
+    display: flex;
+    animation: slideFadeIn 0.5s ease forwards;
+  }
+
+  .nav-container .list li {
+    margin: 10px 0;
+    text-align: right;
+  }
+}

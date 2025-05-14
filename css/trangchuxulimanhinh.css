@@ -1,0 +1,128 @@
+/* CSS responsive tối ưu cho điện thoại */
+@media (max-width: 768px) {
+  /* Menu responsive */
+  .ungdung {
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  .nav-container {
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 32px;
+    color: aliceblue;
+    cursor: pointer;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .list {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #006666;
+    border-radius: 0 0 12px 12px;
+    padding: 10px 0;
+    display: none;
+    gap: 10px;
+    z-index: 9999;
+  }
+
+  .list.active {
+    display: flex;
+  }
+
+  .lienket {
+    font-size: 16px;
+  }
+
+  /* Nút điều hướng trang 1 */
+  .nut-trang1 {
+    left: 50%;
+    top: 55%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nut-trang1 a {
+    width: 170px;
+    text-align: center;
+  }
+
+  /* Tiêu đề và mô tả trang 2 */
+  .lydo-heading {
+    font-size: 30px;
+    left: 50%;
+    top: 60px;
+  }
+
+  .lydo-description {
+    width: 90%;
+    left: 50%;
+    top: 140px;
+    font-size: 16px;
+  }
+
+  .nut-dangnhap-trang2 {
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .anh-bo-goc {
+    width: 90%;
+    left: 50%;
+    top: 380px;
+    transform: translateX(-50%);
+  }
+
+  /* Trang 3 */
+  .thuctrang {
+    font-size: 30px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .noidung {
+    width: 90%;
+    left: 50%;
+    top: 140px;
+    font-size: 16px;
+    transform: translateX(-50%);
+  }
+
+  .noidung-img {
+    display: none; /* ẩn ảnh để tiết kiệm diện tích */
+  }
+
+  .btn-tim-hieu {
+    top: 520px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Điều chỉnh chiều cao các trang */
+  .trang1,
+  .trang2,
+  .trang3 {
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    min-height: 650px;
+  }
+
+  /* Ẩn bớt các hiệu ứng dư thừa trên điện thoại */
+  .gear-wrapper,
+  .scroll-vertical {
+    display: none;
+  }
+}
