@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/diadiem.css">
+        <script src="./assets/Javascript/diadiem.js" defer></script>
+        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+        <title>Gợi Ý - Du Lịch Xanh</title>
+  </head>
+
+  <body>
+    <!-- Gợi ý du lịch -->
+    <div class="goiydulich container">
+  
+      <div class="trangchinhdiadiem">
+        <img class="imgbackground" src="./assets/img/imgbackgroundtrang2.png" alt="">
+        <img class="imgbackgroundphu" src="./assets/img/imgbackgroundphu.png" alt="">
+
+        <!-- Form nằm trên nền background -->
+        <div class="form-goiy-wrapper" style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding-top: 50px;">
+          <div class="diadiem">
+            <h2 class="tieude">Địa Điểm</h2>
+            <p class="huongdan">Hãy nhập địa điểm bạn muốn đến</p>
+            <p class="goiy">(vd: Đà Nẵng, Sài Gòn, Hà Nội, Đà Lạt,...)</p>
+            <input type="text" id="searchDiaDiem" placeholder="Nhập địa điểm..." oninput="goiYDiaDiem()">
+            <ul id="goiyKetQua" class="ketqua"></ul>
+          </div>
+        
+          <div class="ngaydi">
+            <h2 class="tieude">Ngày Đi</h2>
+            <p class="huongdan">Hãy nhập số ngày bạn đi:</p>
+            <p class="goiy">vd: một ngày, hai ngày một đêm, ba ngày hai đêm, bốn ngày ba đêm,...</p>
+            <input type="text" id="soNgayDi" placeholder="Nhập số ngày...">
+          </div>
+
+          <div class="nut-goiy" style="flex-basis: 100%; display: flex; justify-content: center; margin-top: 20px;">
+            <button onclick="hienThongBao()">Gợi ý địa điểm</button>
+          </div>
+
+          <div id="goiyKetQuaHienThi" class="goiy-ketqua" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-goiy" id="popupGoiy">
+      <button class="close-btn" onclick="dongThongBao()">×</button>
+      <div id="popupNoiDung"></div>
+    </div>
+
+    <!-- Giới thiệu sản phẩm -->
+    <div class="gthieusanpham container">
+      <video autoplay muted loop playsinline>
+        <source src="./assets/video/vidcuadiadiem.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+
+      <div class="noidung">
+        <p class="dong1">Nếu như bạn muốn đi du lịch xanh mà chưa có vật dụng để khởi hành</p>
+        <p class="dong2">Hãy vào phần Sản Phẩm của chúng tôi nhé !</p>
+        <div class="muioen">⬇</div>
+        <button class="nut-sanpham" onclick="window.location.href='sanpham.html'">Sản Phẩm</button>
+      </div>
+    </div>
+
+    <!-- Trang cuối -->
+    <div class="trangcuoi container">
+      <img class="imgtrangcuoi" src="./assets/img/imgtrangcuoi.png" alt="">
+
+      <div class="link-container">
+        <a href="trangchu.html">Trang Chủ</a>
+        <a href="gioithieu.html">Giới Thiệu</a>
+        <a href="diadiem.html">Địa Điểm</a>
+        <a href="sanpham.html">Sản Phẩn</a>
+        <a href="bangtin.html">Bảng Tin</a>
+        <a href="chat.html">Chat</a>
+        <a href="dangnhap.html">Đăng Nhập</a>
+      </div>
+
+      <div class="chutrangcuoi">
+        <p>Liên hệ: <br>
+        khoald.24it@vku.udn.vn <br>
+        duclh.24it@vku.udn.vn <br>
+        ductt.24it@vku.udn.vn <br>
+        baonhq.24it@vku.udn.vn</p>
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="ungdung">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="./assets/img/logoteam.png" alt="Logo">
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="list">
+          <li><a class="lienket" href="trangchu.html">Trang Chủ</a></li>
+          <li><a class="lienket" href="gioithieu.html">Giới Thiệu</a></li>
+          <li><a class="lienket" href="diadiem.html">Địa Điểm</a></li>
+          <li><a class="lienket" href="sanpham.html">Sản Phẩm</a></li>
+          <li><a class="lienket" href="bangtin.html">Bảng Tin</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="chat.html">Chat</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="dangnhap.html">Đăng Nhập</a></li>
+        </ul>
+      </div>
+      <div class="scroll-vertical">
+        <span>Hãy</span>
+        <span>lướt</span>
+        <span>xuống</span>
+        <span>↓</span>
+      </div>
+    </div>
+  </body>
+</html>

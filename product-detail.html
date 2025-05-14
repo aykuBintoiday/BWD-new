@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/product-detail.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>Chi Tiết Sản Phẩm</title>
+</head>
+
+<body>
+
+    <div class="ungdung">
+        <div class="nav-container">
+          <div class="logo">
+            <img src="./assets/img/logoteam.png" alt="Logo">
+          </div>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+          <ul class="list">
+            <li><a class="lienket" href="trangchu.html">Trang Chủ</a></li>
+          <li><a class="lienket" href="gioithieu.html">Giới Thiệu</a></li>
+          <li><a class="lienket" href="diadiem.html">Địa Điểm</a></li>
+          <li><a class="lienket" href="sanpham.html">Sản Phẩm</a></li>
+          <li><a class="lienket" href="bangtin.html">Bảng Tin</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="chat.html">Chat</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="dangnhap.html">Đăng Nhập</a></li>
+          </ul>
+        </div>
+      </div>
+
+  <div class="container">
+    <div class="product-detail">
+      <!-- Khu vực hình ảnh -->
+      <div class="product-images">
+        <div class="main-image">
+          <img id="main-product-image" src="" alt="Hình ảnh sản phẩm">
+        </div>
+        <div class="image-thumbnails" id="image-thumbnails">
+          <img class="thumbnail" src="" alt="Hình ảnh 1">
+          <img class="thumbnail" src="" alt="Hình ảnh 2">
+          <img class="thumbnail" src="" alt="Hình ảnh 3">
+        </div>
+      </div>
+
+      <!-- Khu vực thông tin -->
+      <div class="product-info">
+        <h1 id="product-name"></h1>
+        <p class="product-description" id="product-description"></p> 
+        <div class="product-price">
+          <span class="current-price" id="current-price"></span>
+          <span class="old-price" id="old-price"></span>
+          <span class="discount" id="discount"></span>
+        </div>
+      
+        <!-- Phân loại -->
+        <div class="product-options">
+          <div class="option">
+            <label>Phân Loại Màu:</label>
+            <div class="choices" id="product-choices">
+              <button class="choice color"></button>
+              <button class="choice color"></button>
+              <button class="choice color"></button>
+              <button class="choice color"></button>
+            </div>
+          </div>
+          <div class="option">
+            <label>Phân Loại Size:</label>
+            <div class="choices" id="size-choices">
+              <button class="choice size">S</button>
+              <button class="choice size">M</button>
+              <button class="choice size">L</button>
+              <button class="choice size">XL</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Số lượng -->
+        <div class="quantity">
+          <label for="quantity-input">Số Lượng:</label>
+          <div class="quantity-control">
+            <button id="decrease-quantity">-</button>
+            <input id="quantity-input" type="number" value="1" min="1">
+            <button id="increase-quantity">+</button>
+          </div>
+        </div>
+      
+        <!-- Nút hành động -->
+        <div class="action-buttons">
+          <button class="add-cart" id="add-cart">Thêm Vào Giỏ Hàng</button>
+          <button class="buy-now" id="buy-now">Mua Ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal điền thông tin -->
+<div id="user-info-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="close-modal">&times;</span>
+    <h2>Thông Tin Người Mua</h2>
+    <form id="user-info-form">
+      <label for="buyer-name">Họ và Tên:</label>
+      <input type="text" id="buyer-name" name="name" required>
+
+      <label for="buyer-address">Địa Chỉ:</label>
+      <input type="text" id="buyer-address" name="address" required>
+
+      <label for="buyer-phone">Số Điện Thoại:</label>
+      <input type="tel" id="buyer-phone" name="phone" pattern="0[0-9]{9}" required>
+
+      <button type="submit">Hoàn Thành Đặt Hàng</button>
+    </form>
+  </div>
+</div>
+
+  <script src="./assets/Javascript/product-detail.js"></script>
+</body>
+
+</html>

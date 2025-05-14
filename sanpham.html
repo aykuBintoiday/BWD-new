@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/sanpham.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <title>Du Lịch Xanh - Sản Phẩm</title>
+  </head>
+
+  <body>
+        <!-- Video nền -->
+    <video autoplay muted loop id="background-video">
+      <source src="./assets/img/0513.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+
+  <div class="ungdung">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="./assets/img/logoteam.png" alt="Logo">
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <ul class="list">
+          <li><a class="lienket" href="trangchu.html">Trang Chủ</a></li>
+          <li><a class="lienket" href="gioithieu.html">Giới Thiệu</a></li>
+          <li><a class="lienket" href="diadiem.html">Địa Điểm</a></li>
+          <li><a class="lienket" href="sanpham.html">Sản Phẩm</a></li>
+          <li><a class="lienket" href="bangtin.html">Bảng Tin</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="chat.html">Chat</a></li>
+          <li><a style="color: #00FFCC;" class="lienket" href="dangnhap.html">Đăng Nhập</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Thanh tìm kiếm -->
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Tìm kiếm sản phẩm...">
+    </div>
+
+    <div class="product-grid">
+      <!-- Sản phẩm 1 -->
+      <div class="item" data-colors="Đen, Xám, Nâu" data-price="45900">
+        <div class="image-box">
+          <img src="./assets/img/product1.webp" alt="Kính thời trang">
+        </div>
+        <div class="details">
+          <h2>Kính thời trang</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=1" class="btn btn-info">Tìm Hiểu</a>
+            <a class="btn btn-buy" data-id="1">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 2 -->
+      <div class="item" data-colors="Navy, Đen, Đỏ" data-price="150000">
+        <div class="image-box">
+          <img src="./assets/img/product2.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Bình nước inox</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=2" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="2">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 3 -->
+      <div class="item" data-colors="Hồng, Vàng, Xanh lá" data-price="250000">
+        <div class="image-box">
+          <img src="./assets/img/product3.webp" alt="">
+        </div>
+        <div class="details">
+            <h2>Giỏ dã ngoại</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=3" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="3">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 4 -->
+      <div class="item" data-colors="Xanh lá, Hồng, Xanh" data-price="120000">
+        <div class="image-box">
+          <img src="./assets/img/product4.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Kem chống nắng</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=4" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="4">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 5 -->
+      <div class="item" data-colors="Xanh, Cam, Hồng" data-price="80000">
+        <div class="image-box">
+          <img src="./assets/img/product5.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Khăn tắm sợi tre</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=5" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="5">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 6 -->
+      <div class="item" data-colors="Đỏ, Be, Kaki" data-price="100000">
+        <div class="image-box" >
+          <img src="./assets/img/product6.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Túi đan thủ công</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=6" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="6">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 7 -->
+      <div class="item" data-colors="Vàng, Hồng, Xanh" data-price="200000">
+        <div class="image-box">
+          <img src="./assets/img/product7.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Thảm picnic</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=7" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="7">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 8 -->
+      <div class="item" data-colors="Xanh lá, Đen, Vàng" data-price="250000">
+        <div class="image-box">
+          <img src="./assets/img/product8.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Đèn pin năng lượng mặt trời</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=8" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="8">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 9 -->
+      <div class="item" data-colors="Đen, Xanh, Xám" data-price="500000">
+        <div class="image-box">
+          <img src="./assets/img/product9.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Balo du lịch</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=9" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="9">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Sản phẩm 10 -->
+      <div class="item" data-colors="Be, Trắng, Cà phê" data-price="50000">
+        <div class="image-box">
+          <img src="./assets/img/product10.webp" alt="">
+        </div>
+        <div class="details">
+          <h2>Nón du lịch</h2>
+          <div class="buttons">
+            <a href="product-detail.html?id=10" class="btn btn-info">Tìm Hiểu</a>
+            <a href="#" class="btn btn-buy" data-id="10">Mua Ngay</a>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Modal Mua Ngay -->
+        <div id="buy-now-modal" class="modal">
+          <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Mua Ngay</h2>
+            <!-- Thêm phần hiển thị giá -->
+            <p id="current-price">Giá: </p>
+            <form id="buy-now-form">
+              <label for="color">Chọn Màu:</label>
+              <select id="color" name="color" required>
+                <option value="">Chọn màu</option>
+                <option value="Trắng"></option>
+                <option value="Đen"></option>
+                <option value="Xanh"></option>
+              </select>
+        
+              <label for="size">Chọn Size:</label>
+              <select id="size" name="size" required>
+                <option value="">Chọn size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+              </select>
+              <label for="quantity-input">Số lượng:</label>
+              <input type="number" id="quantity-input" name="quantity" min="1" value="1" required>
+        
+              <label for="name">Họ và Tên:</label>
+              <input type="text" id="name" name="name" required>
+        
+              <label for="address">Địa Chỉ:</label>
+              <input type="text" id="address" name="address" required>
+        
+              <label for="phone">Số Điện Thoại:</label>
+              <input type="tel" id="phone" name="phone" pattern="0[0-9]{9}" required>
+        
+              <button type="submit">Mua</button>
+            </form>
+          </div>
+        </div>
+    
+    <a href="cart.html" class="cart-button"><i class="fas fa-shopping-cart"></i></a>
+    <script src="./assets/Javascript/sanpham.js"></script>
+    
+  </body>
+</html>

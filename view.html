@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <title>Du Lịch Xanh</title>
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #introVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    .nutchuyentrang {
+      font-family: 'Roboto', sans-serif;
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      padding: 14px 24px;
+      background-color: rgba(100, 100, 100, 0.35);
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.3s, color 0.3s;
+      z-index: 10001;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .nutchuyentrang:hover {
+      background-color: #0c455b;
+      color: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    /* Mobile cải tiến */
+    @media (max-width: 768px) {
+      .nutchuyentrang {
+        position: absolute;
+        top: 89%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 131px;
+        height: 9px;
+        line-height: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        background-color: #00b894;
+        color: white;
+        border: none;
+        border-radius: 22px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        z-index: 10001;
+        text-decoration: none;
+  }
+
+  .nutchuyentrang:hover {
+    background-color: #019875;
+    transform: translateX(-50%) scale(1.03);
+  }
+      .rotate-warning {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #00b894;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        text-align: center;
+        padding: 20px;
+        font-size: 20px;
+        z-index: 100000;
+        opacity: 1;
+        transition: opacity 2s ease;
+      }
+
+      .rotate-warning.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+
+    /* Ẩn mặc định trên desktop */
+    .rotate-warning {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="rotate-warning" id="rotateWarning">
+    Vui lòng lật ngang màn hình để sự trình chiếu được diễn ra trọn vẹn!
+  </div>
+
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="./assets/video/Videobest.mp4" type="video/mp4" />
+    Trình duyệt của bạn không hỗ trợ video.
+  </video>
+
+  <a href="trangchu.html" class="nutchuyentrang">→ Vào Trang Chủ</a>
+
+  <script>
+    // Chỉ hiển thị cảnh báo và ẩn nó sau 8s nếu ở mobile
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        const warning = document.getElementById("rotateWarning");
+        if (warning) {
+          warning.classList.add("hide");
+        }
+      }, 8000);
+    }
+  </script>
+</body>
+</html>
